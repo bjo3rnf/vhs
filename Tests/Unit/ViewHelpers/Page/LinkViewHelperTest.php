@@ -2,7 +2,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2013 Claus Due <claus@wildside.dk>
+ *  (c) 2013 Cedric Ziel <cedric@cedric-ziel.com>
  *
  *  All rights reserved
  *
@@ -25,10 +25,10 @@
 
 /**
  * @protection off
- * @author Claus Due <claus@wildside.dk>
+ * @author Cedric Ziel <cedric@cedric-ziel.com>
  * @package Vhs
  */
-class Tx_Vhs_ViewHelpers_Media_YoutubeViewHelperTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
+class Tx_Vhs_ViewHelpers_Page_LinkViewHelperTest extends Tx_Extbase_Tests_Unit_BaseTestCase {
 
 	/**
 	 * @var $objectManager Tx_Extbase_Object_ObjectManagerInterface
@@ -44,11 +44,11 @@ class Tx_Vhs_ViewHelpers_Media_YoutubeViewHelperTest extends Tx_Extbase_Tests_Un
 	}
 
 	/**
-	 * @return Tx_Vhs_ViewHelpers_Media_YoutubeViewHelper
+	 * @return Tx_Vhs_ViewHelpers_Page_LinkViewHelper
 	 * @support
 	 */
 	protected function getPreparedInstance() {
-		$viewHelperClassName = 'Tx_Vhs_ViewHelpers_Media_YoutubeViewHelper';
+		$viewHelperClassName = 'Tx_Vhs_ViewHelpers_Page_LinkViewHelper';
 		$arguments = array();
 		$nodeClassName = (FALSE !== strpos($viewHelperClassName, '_') ? 'Tx_Fluid_Core_Parser_SyntaxTree_ViewHelperNode' : '\\TYPO3\\CMS\\Fluid\\Core\\Parser\\SyntaxTree\\ViewHelperNode');
 		$renderingContextClassName = (FALSE !== strpos($viewHelperClassName, '_') ? 'Tx_Fluid_Core_Rendering_RenderingContext' : '\\TYPO3\\CMS\\Fluid\\Core\\Rendering\\RenderingContext');
@@ -78,7 +78,7 @@ class Tx_Vhs_ViewHelpers_Media_YoutubeViewHelperTest extends Tx_Extbase_Tests_Un
 	 */
 	public function canCreateViewHelperClassInstance() {
 		$instance = $this->getPreparedInstance();
-		$this->assertInstanceOf('Tx_Vhs_ViewHelpers_Media_YoutubeViewHelper', $instance);
+		$this->assertInstanceOf('Tx_Vhs_ViewHelpers_Page_LinkViewHelper', $instance);
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Tx_Vhs_ViewHelpers_Media_YoutubeViewHelperTest extends Tx_Extbase_Tests_Un
 	 */
 	public function canPrepareViewHelperArguments() {
 		$instance = $this->getPreparedInstance();
-		$this->assertInstanceOf('Tx_Vhs_ViewHelpers_Media_YoutubeViewHelper', $instance);
+		$this->assertInstanceOf('Tx_Vhs_ViewHelpers_Page_LinkViewHelper', $instance);
 		$arguments = $instance->prepareArguments();
 		$constraint = new PHPUnit_Framework_Constraint_IsType('array');
 		$this->assertThat($arguments, $constraint);
@@ -115,7 +115,7 @@ class Tx_Vhs_ViewHelpers_Media_YoutubeViewHelperTest extends Tx_Extbase_Tests_Un
 	 */
 	public function canRenderWithoutProvidedArguments() {
 		$instance = $this->getPreparedInstance();
-		$this->assertInstanceOf('Tx_Vhs_ViewHelpers_Media_YoutubeViewHelper', $instance);
+		$this->assertInstanceOf('Tx_Vhs_ViewHelpers_Page_LinkViewHelper', $instance);
 		$instance->render();
 	}
 
